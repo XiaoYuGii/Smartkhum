@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartKhum — រាយការណ៍បញ្ហា</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="wordmark">
+    <svg class="badge-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 26 L10 18 L16 22 L22 12 L30 20" stroke="#D9A441" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="30" cy="20" r="2.4" fill="#D9A441"/>
+    </svg>
+    ស្មាតឃុំ
+  </a>
+  <nav class="site-nav">
+    <a href="/" class="active">រាយការណ៍</a>
+    <a href="/dashboard">ផែនទី &amp; ស្ថិតិ</a>
+    <a href="/authority">សម្រាប់អាជ្ញាធរ</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div>
+      <span class="eyebrow">ដំណាក់កាលទី ១ — User</span>
+      <h1>ភូមិរបស់អ្នកមានបញ្ហា? <br>ប្រាប់ស្មាតឃុំ ក្នុងរយៈពេលមួយនាទី។</h1>
+      <p class="lede">និយាយ ថតរូប ឬវាយបញ្ចូល — ដោយមិនចាំបាច់មាន Internet ល្អ ឬចេះបច្ចេកវិទ្យា។ AI នឹងជួយចាត់ថ្នាក់ និងបញ្ជូនទៅអាជ្ញាធរជាបន្ទាន់។</p>
+    </div>
+    <svg class="pipeline-svg" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="140" width="320" height="60" fill="#DCE6D2"/>
+      <rect x="0" y="100" width="320" height="40" fill="#CBDBC0"/>
+      <rect x="0" y="70" width="320" height="30" fill="#BAD0AE"/>
+      <rect x="0" y="50" width="320" height="20" fill="#A9C59C"/>
+      <text x="160" y="175" text-anchor="middle" font-size="13" fill="#2F4327" font-family="monospace">🧑‍🌾 អ្នកភូមិ</text>
+      <text x="160" y="122" text-anchor="middle" font-size="13" fill="#2F4327" font-family="monospace">🤖 AI Engine</text>
+      <text x="160" y="87" text-anchor="middle" font-size="12" fill="#2F4327" font-family="monospace">🗺️ Dashboard</text>
+      <text x="160" y="62" text-anchor="middle" font-size="11" fill="#2F4327" font-family="monospace">🏛️ អាជ្ញាធរ</text>
+    </svg>
+  </section>
+
+  <div class="panel">
+    <form id="report-form">
+
+      <div class="input-group">
+        <label for="description">ពិពណ៌នាបញ្ហា (Description)</label>
+        <textarea id="description" rows="4" placeholder="ឧ. ស្ពានបាក់នៅភូមិ... / ទឹកជំនន់លិចផ្ទះ..." required></textarea>
+      </div>
+
+      <div class="capture-row" style="margin-bottom:18px;">
+        <div class="capture-btn" id="btn-voice">
+          <span class="icon">🎙️</span>
+          <span id="voice-label">និយាយសំឡេង</span>
+        </div>
+        <div class="capture-btn" id="btn-photo">
+          <span class="icon">📸</span>
+          <span>ថតរូប</span>
+          <input type="file" id="photo-input" accept="image/*" capture="environment" style="display:none;">
+        </div>
+        <div class="capture-btn" id="btn-gps">
+          <span class="icon">📍</span>
+          <span id="gps-label">ទីតាំង GPS</span>
+        </div>
+      </div>
+
+      <img id="photo-preview" style="display:none; max-width:100%; border-radius:12px; margin-bottom:18px;">
+
+      <div class="input-group">
+        <label for="village">ភូមិ / ឃុំ (Village / Commune) — ជម្រើស</label>
+        <input type="text" id="village" placeholder="ឧ. ឃុំព្រែកតាហ៊ែន">
+      </div>
+
+      <div class="input-group">
+        <label for="reporter_name">ឈ្មោះអ្នករាយការណ៍ (ជម្រើស)</label>
+        <input type="text" id="reporter_name" placeholder="មិនបញ្ចូលក៏បាន">
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+        📡 បញ្ជូនទៅ AI Server
+      </button>
+    </form>
+  </div>
+
+  <section style="margin-top:36px;">
+    <span class="eyebrow">អ្វីកើតឡើងបន្ទាប់</span>
+    <h2 style="font-size:1.2rem;">លំហូរដំណើរការទាំង ៤ ដំណាក់កាល</h2>
+    <div class="terrace-steps">
+      <div class="terrace-step">
+        <div class="step-num">01 / USER</div>
+        <h3>អ្នកភូមិផ្ញើបញ្ហា</h3>
+        <p>សំឡេង រូបថត ឬអត្ថបទ ព្រមទាំង GPS ដោយមិនចាំបាច់ Internet ល្អ។</p>
+        <div class="icons">🎙️📸📍</div>
+      </div>
+      <div class="terrace-step">
+        <div class="step-num">02 / AI ENGINE</div>
+        <h3>AI វិភាគ &amp; អាទិភាព</h3>
+        <p>បកប្រែ ចាត់ថ្នាក់ប្រភេទ និងកំណត់អាទិភាព High/Medium/Low ស្វ័យប្រវត្តិ។</p>
+        <div class="icons">🧠🏷️🔺</div>
+      </div>
+      <div class="terrace-step">
+        <div class="step-num">03 / DASHBOARD</div>
+        <h3>ផែនទី &amp; ស្ថិតិ</h3>
+        <p>បង្ហាញលើ Interactive Map ជាមួយស្ថិតិជាក់ស្តែងសម្រាប់អាជ្ញាធរ។</p>
+        <div class="icons">🗺️📊🔎</div>
+      </div>
+      <div class="terrace-step">
+        <div class="step-num">04 / AUTHORITY</div>
+        <h3>ដោះស្រាយ &amp; Feedback</h3>
+        <p>អាជ្ញាធរទទួលការជូនដំណឹង ចាត់ចែងក្រុមការងារ និងឆ្លើយតបទៅអ្នកភូមិ។</p>
+        <div class="icons">🔔✅💬</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<footer class="site-footer">SmartKhum — ភ្ជាប់ភូមិ → AI → Dashboard → Action</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

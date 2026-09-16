@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartKhum — ផែនទី &amp; ស្ថិតិ</title>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="wordmark">
+    <svg class="badge-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 26 L10 18 L16 22 L22 12 L30 20" stroke="#D9A441" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="30" cy="20" r="2.4" fill="#D9A441"/>
+    </svg>
+    ស្មាតឃុំ
+  </a>
+  <nav class="site-nav">
+    <a href="/">រាយការណ៍</a>
+    <a href="/dashboard" class="active">ផែនទី &amp; ស្ថិតិ</a>
+    <a href="/authority">សម្រាប់អាជ្ញាធរ</a>
+  </nav>
+</header>
+
+<main>
+  <span class="eyebrow">ដំណាក់កាលទី ៣ — Map &amp; Dashboard</span>
+  <h1 style="font-size:1.6rem;">ផែនទី &amp; ស្ថិតិជាក់ស្តែង</h1>
+  <p style="color:var(--ink-soft); max-width:60ch;">បញ្ហាទាំងអស់ដែលអ្នកភូមិបានរាយការណ៍ បង្ហាញនៅទីនេះ ជាមួយទីតាំង ប្រភេទ និងអាទិភាព។</p>
+
+  <div class="stat-row" id="stats-row" style="margin-bottom:24px;">
+    <div class="stat-card"><div class="num" id="stat-total">–</div><div class="label">សរុបករណី</div></div>
+    <div class="stat-card"><div class="num" id="stat-high">–</div><div class="label">អាទិភាពខ្ពស់</div></div>
+    <div class="stat-card"><div class="num" id="stat-pending">–</div><div class="label">កំពុងរង់ចាំ</div></div>
+    <div class="stat-card"><div class="num" id="stat-resolved">–</div><div class="label">ដោះស្រាយរួច</div></div>
+  </div>
+
+  <div class="panel">
+    <div class="filter-bar">
+      <select id="filter-category">
+        <option value="">គ្រប់ប្រភេទ</option>
+        <option value="water">ទឹក</option>
+        <option value="road">ផ្លូវ</option>
+        <option value="health">សុខភាព</option>
+        <option value="environment">បរិស្ថាន</option>
+        <option value="other">ផ្សេងៗ</option>
+      </select>
+      <select id="filter-priority">
+        <option value="">គ្រប់អាទិភាព</option>
+        <option value="High">ខ្ពស់ (High)</option>
+        <option value="Medium">មធ្យម (Medium)</option>
+        <option value="Low">ទាប (Low)</option>
+      </select>
+      <select id="filter-status">
+        <option value="">គ្រប់ស្ថានភាព</option>
+        <option value="Pending">កំពុងរង់ចាំ</option>
+        <option value="InProgress">កំពុងដោះស្រាយ</option>
+        <option value="Resolved">ដោះស្រាយរួច</option>
+      </select>
+      <button class="btn btn-outline" id="refresh-btn">🔄 ធ្វើឱ្យទាន់សម័យ</button>
+    </div>
+
+    <div id="map"></div>
+    <div class="legend">
+      <span><span class="dot dot-high"></span> អាទិភាពខ្ពស់</span>
+      <span><span class="dot dot-medium"></span> មធ្យម</span>
+      <span><span class="dot dot-low"></span> ទាប</span>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:20px;">
+    <h2 style="font-size:1.1rem;">ករណីថ្មីៗ</h2>
+    <div id="issue-list"></div>
+  </div>
+</main>
+
+<footer class="site-footer">SmartKhum — ភ្ជាប់ភូមិ → AI → Dashboard → Action</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

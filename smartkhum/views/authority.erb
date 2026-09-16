@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartKhum — សម្រាប់អាជ្ញាធរ</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="wordmark">
+    <svg class="badge-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 26 L10 18 L16 22 L22 12 L30 20" stroke="#D9A441" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="30" cy="20" r="2.4" fill="#D9A441"/>
+    </svg>
+    ស្មាតឃុំ
+  </a>
+  <nav class="site-nav">
+    <a href="/">រាយការណ៍</a>
+    <a href="/dashboard">ផែនទី &amp; ស្ថិតិ</a>
+    <a href="/authority" class="active">សម្រាប់អាជ្ញាធរ</a>
+  </nav>
+</header>
+
+<main>
+  <span class="eyebrow">ដំណាក់កាលទី ៤ — Authority / NGO</span>
+  <h1 style="font-size:1.6rem;">បញ្ជីករណី &amp; ការចាត់ចែង</h1>
+  <p style="color:var(--ink-soft); max-width:60ch;">តម្រៀបតាមអាទិភាព។ ចុចដើម្បីផ្លាស់ប្តូរស្ថានភាព ឬផ្ញើ Feedback ត្រលប់ទៅអ្នកភូមិវិញ។</p>
+
+  <div class="panel">
+    <div class="filter-bar">
+      <select id="filter-priority">
+        <option value="">គ្រប់អាទិភាព</option>
+        <option value="High">ខ្ពស់ (High)</option>
+        <option value="Medium">មធ្យម (Medium)</option>
+        <option value="Low">ទាប (Low)</option>
+      </select>
+      <select id="filter-status">
+        <option value="">គ្រប់ស្ថានភាព</option>
+        <option value="Pending">កំពុងរង់ចាំ</option>
+        <option value="InProgress">កំពុងដោះស្រាយ</option>
+        <option value="Resolved">ដោះស្រាយរួច</option>
+      </select>
+      <button class="btn btn-outline" id="refresh-btn">🔄 ធ្វើឱ្យទាន់សម័យ</button>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table class="ledger">
+        <thead>
+          <tr>
+            <th>ល.រ</th>
+            <th>ពិពណ៌នា</th>
+            <th>ប្រភេទ</th>
+            <th>អាទិភាព</th>
+            <th>ស្ថានភាព</th>
+            <th>កាលបរិច្ឆេទ</th>
+            <th>សកម្មភាព</th>
+          </tr>
+        </thead>
+        <tbody id="issue-tbody">
+        </tbody>
+      </table>
+      <div id="empty-slot"></div>
+    </div>
+  </div>
+</main>
+
+<!-- Feedback modal -->
+<div id="feedback-modal" style="display:none; position:fixed; inset:0; background:rgba(35,41,31,.55); z-index:200; align-items:center; justify-content:center;">
+  <div class="panel" style="max-width:480px; width:92%;">
+    <h2 style="font-size:1.05rem;">ផ្ញើ Feedback ទៅអ្នកភូមិ</h2>
+    <div class="input-group">
+      <label for="feedback-text">សារ</label>
+      <textarea id="feedback-text" rows="4" placeholder="ឧ. ក្រុមការងារនឹងមកជួសជុលនៅថ្ងៃស្អែក..."></textarea>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn btn-outline" id="feedback-cancel" style="flex:1;">បោះបង់</button>
+      <button class="btn btn-primary" id="feedback-send" style="flex:1;">💬 ផ្ញើ</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<footer class="site-footer">SmartKhum — ភ្ជាប់ភូមិ → AI → Dashboard → Action</footer>
+
+<script src="/js/authority.js"></script>
+</body>
+</html>
